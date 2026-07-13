@@ -40,7 +40,7 @@ terminal log, a shared screen - treat it as compromised and generate a new
 one immediately from the AI Studio dashboard. Never paste it into chat with
 anyone, including an AI assistant.
 
-## 2. Deploy it live (free, for your submission link)
+## 2. Deploy it live
 1. Push this folder to a new **public GitHub repo**. Do NOT commit an API
    key anywhere in the code - the app only ever takes it via the sidebar
    at runtime.
