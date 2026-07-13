@@ -57,7 +57,7 @@ anyone, including an AI assistant.
 - `mock_users.csv` — generated demo login credentials (hashed passwords)
 - `requirements.txt` — dependencies
 
-## 4. Compliance notes (for your PPT / judges)
+## 4. Compliance notes 
 - No real customer data or PII anywhere — all users and transactions are
   fabricated by `generate_data.py`.
 - Passwords are stored as SHA-256 hashes, not plaintext, even for this
@@ -74,32 +74,7 @@ anyone, including an AI assistant.
   reviewed, with the bank's actual sandbox APIs replacing the synthetic
   CSV — nothing here talks to a live banking system.
 
-## 5. What changed in this version
-- **Chat layout**: the avatar panel and chat thread are now in the same
-  right-hand column, one continuous unit, instead of avatar-panel-right /
-  chat-full-width-below.
-- **Payment mode**: `generate_data.py` now assigns a `Payment_Mode` (UPI /
-  Debit Card / Credit Card / Net Banking) to every transaction, weighted
-  realistically (UPI-heavy for day-to-day spend, Net Banking for salary/
-  rent/investment). The Accounts page shows a spend-by-mode chart and a
-  recent card/UPI activity feed.
-- **Vector DB (real, not just named on a slide)**: `knowledge_base.py`
-  splits the old single hardcoded instrument paragraph into one chunk per
-  instrument, embeds them with Gemini's embedding model, and stores/queries
-  them via an in-memory ChromaDB collection. `WealthStrategist.recommend()`
-  now retrieves only the instruments relevant to each question instead of
-  always injecting the full static list - and falls back to the static list
-  automatically if the vector DB isn't available for any reason, so this
-  can never be the thing that breaks a demo.
-- **Avatar (real 3D, not the CSS circle)**: `avatar.py` renders an actual
-  Ready Player Me `.glb` avatar in-app via Google's `<model-viewer>` web
-  component, with a short pulse animation right after WealthAssist responds.
-  Paste your own free avatar URL from readyplayer.me into the sidebar; a
-  default demo avatar is used if you don't. Honest scope note: this is a
-  real 3D render with camera controls, not a full RPM SDK integration with
-  lip-synced visemes - that's a natural next step, not what's built today.
-
-## 6. Ideas to extend if you have more time
+## 5. Ideas to extend if you have more time
 - Swap the pie/line charts for a "goal tracker" (e.g., progress toward a
   PPF/FD goal).
 - Add text-to-speech (gTTS, free) so the avatar "speaks" its recommendation.
