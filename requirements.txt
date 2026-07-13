@@ -1,0 +1,7 @@
+chromadb
+google-generativeai
+groq
+gtts
+pandas
+plotly
+streamlit
