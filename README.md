@@ -46,7 +46,7 @@ terminal log, a shared screen - treat it as compromised and generate a new
 one immediately from the AI Studio dashboard. Never paste it into chat with
 anyone, including an AI assistant.
 
-## 2. Deploy it live (free, for your submission link)
+## 2. Deploy it live
 1. Push this folder to a new **public GitHub repo**. Do NOT commit an API
    key anywhere in the code - the app only ever takes it via the sidebar
    at runtime.
@@ -66,7 +66,7 @@ anyone, including an AI assistant.
 - `mock_users.csv` — generated demo login credentials (hashed passwords)
 - `requirements.txt` — dependencies
 
-## 4. Compliance notes (for your PPT / judges)
+## 4. Compliance notes
 - No real customer data or PII anywhere — all users and transactions are
   fabricated by `generate_data.py`.
 - Passwords are stored as SHA-256 hashes, not plaintext, even for this
@@ -108,7 +108,7 @@ anyone, including an AI assistant.
   real 3D render with camera controls, not a full RPM SDK integration with
   lip-synced visemes - that's a natural next step, not what's built today.
 
-## 6. What changed in V8
+## 6. What changed in Version 8
 - **Dual AI provider (Gemini + Groq)**: `agents.py`'s `WealthStrategist` now
   takes a `provider` argument and works identically with either. Switch
   between them from the sidebar radio button any time - this exists
@@ -141,7 +141,7 @@ anyone, including an AI assistant.
   head height, locked `camera-orbit` distance) that fits the panel
   consistently regardless of the specific avatar's proportions.
 
-## 7. Ideas to extend if you have more time
+## 7. Future Enhancement Ideas
 - Swap the pie/line charts for a "goal tracker" (e.g., progress toward a
   PPF/FD goal).
 - Add text-to-speech (gTTS, free) so the avatar "speaks" its recommendation.
